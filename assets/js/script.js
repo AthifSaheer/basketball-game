@@ -129,13 +129,27 @@
 // ===================================================================================
 // ===================================================================================
 
+var randomNum = Math.floor(Math.random() * 10)
+var newImg = document.createElement("img")
 
+newImg.setAttribute("src", 'https://images.unsplash.com/photo-1593642702749-b7d2a804fbcf?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+newImg.setAttribute("width", "304");
+newImg.setAttribute("height", "228");
+newImg.setAttribute("alt", "The Pulpit Rock");
 
 let ballImage = document.getElementById("ball_img");
 var marginTop = 0
+
 setInterval(function() {
-    ballImage.style.marginTop = `${mt}px`
-    mt = mt + 10
+    ballImage.style.marginTop = `${marginTop}px`
+    marginTop = marginTop + 50
+    
+    if(marginTop == 400) {
+        ballImage.style.display = "none"
+document.body.appendChild(newImg);
+
+    }
+    
 }, 1000);
 
 let basketImage = document.getElementById("basket_img");
